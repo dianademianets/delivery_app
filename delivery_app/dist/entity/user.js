@@ -34,9 +34,9 @@ __decorate([
 ], User.prototype, "lastName", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'int',
+        type: 'varchar',
     }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], User.prototype, "age", void 0);
 __decorate([
     (0, typeorm_1.Column)({
