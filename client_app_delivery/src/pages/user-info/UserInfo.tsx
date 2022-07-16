@@ -26,7 +26,7 @@ const UserInfo: FC = () => {
         usersService.createUser(userData).then((value: AxiosResponse) => setUser(value.data))
 
     }, [productId, userData])
-    console.log(setUser)
+    console.log(user)
 
     localStorage.setItem('userId', JSON.stringify(user?.id))
     return (
@@ -39,9 +39,7 @@ const UserInfo: FC = () => {
                     <label>Last Name:</label>
                     <input {...register("lastName")} placeholder="Last Name"/>
                 {/*    {errors.lastName && <span>{errors.lastName.message}</span>}*/}
-                    <label>Age:</label>
-                    <input type="number" {...register("age")} placeholder="Age "/>
-                {/*    {errors.age && <span>{errors.age.message}</span>}*/}
+
                     <label>Phone:</label>
                     <input {...register("phone")} placeholder="Phone"/>
                 {/*    {errors.phone && <span>{errors.phone.message}</span>}*/}

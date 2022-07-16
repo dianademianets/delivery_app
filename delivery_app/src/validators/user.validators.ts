@@ -15,10 +15,6 @@ export const userValidator = {
             .min(3)
             .max(20)
             .required(),
-        age: Joi
-            .number()
-            .min(18)
-            .max(100),
         phone: Joi
             .string()
             .regex(regexp.PHONE)

@@ -2,8 +2,9 @@ import {
     EntityRepository, getManager, Repository,
 } from 'typeorm';
 
-import { User, IUser } from '../../entity/user';
-import { IUserRepository } from './userRepository.interface';
+import {User, IUser} from '../../entity/user';
+import {IUserRepository} from './userRepository.interface';
+
 
 @EntityRepository(User)
 class UserRepository extends Repository<User> implements IUserRepository {
@@ -13,7 +14,13 @@ class UserRepository extends Repository<User> implements IUserRepository {
 
     public async findUsers(): Promise<IUser[]> {
         return getManager().getRepository(User)
-            .find({relations:['carts']})}
+            .find({relations: ['carts']})
+    }
+
+    public async deleteUserById(findObject: Partial<IUser>) {
+        return getManager().getRepository(User)
+            .delete(findObject);
+    }
 }
 
 export const userRepository = new UserRepository();

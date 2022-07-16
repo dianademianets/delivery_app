@@ -7,7 +7,7 @@ import { CommonFields, ICommonFields } from './commonFields';
 export interface IUser extends ICommonFields {
     firstName: string;
     lastName: string;
-    age: string;
+    age?: number;
     phone: string;
     email: string;
     carts: any[];
@@ -30,9 +30,10 @@ export class User extends CommonFields implements IUser {
         lastName: string;
 
     @Column({
-        type: 'varchar',
+        type: 'int',
+
     })
-        age: string;
+        age?: number;
 
     @Column({
         type: 'varchar',

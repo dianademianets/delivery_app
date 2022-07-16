@@ -1,13 +1,17 @@
-import { IUser } from '../../entity/user';
-import { userRepository } from '../../repositories';
+import {IUser} from '../../entity/user';
+import {userRepository} from '../../repositories';
 
 class UserService {
     public async createUser(user: IUser): Promise<IUser> {
-        return userRepository.createUser({ ...user });
+        return userRepository.createUser({...user});
     }
 
     public async findUsers(): Promise<IUser[]> {
         return userRepository.findUsers();
+    }
+
+    public async deleteUserById(id: number) {
+        return userRepository.deleteUserById({id});
     }
 }
 
