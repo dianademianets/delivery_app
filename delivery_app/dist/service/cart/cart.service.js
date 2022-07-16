@@ -7,8 +7,10 @@ class CartService {
     async createCart(cart) {
         return repositories_1.cartRepository.createCart(cart);
     }
-    async addProductToCart(cart, product, id, productCount) {
-        const productIndex = cart.cartProducts.findIndex((value) => id.toString() === value.productId.toString());
+    async addProductToCart(cart, product, productCount) {
+        const productId = product.id;
+        // @ts-ignore
+        const productIndex = cart.cartProducts.findIndex((value) => productId.toString() === value.productId.toString());
         if (productIndex !== -1) {
             cart.cartProducts[productIndex].count += productCount;
         }

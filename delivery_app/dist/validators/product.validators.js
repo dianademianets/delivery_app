@@ -48,6 +48,9 @@ exports.productValidator = {
         photos: Joi
             .string()
             .required(),
+        shopId: Joi
+            .number()
+            .required(),
     }),
     updateProduct: Joi.object({
         stockCount: Joi

@@ -5,8 +5,11 @@ import cors from 'cors';
 
 import { config } from './config/config';
 import { apiRouter } from './router';
+import path from 'path';
 
 const app = express();
+
+(global as any).appRoot = path.resolve(process.cwd(), '../');
 
 app.use(cors({
     origin: 'http://localhost:3000',
@@ -17,6 +20,8 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static(path.resolve((global as any).appRoot, 'public')));
 
 app.use(apiRouter);
 

@@ -10,8 +10,10 @@ class CartService {
         return cartRepository.createCart(cart);
     }
 
-    public async addProductToCart(cart:ICart, product:Partial<IProduct>,id:number, productCount: number) {
-        const productIndex = cart.cartProducts.findIndex((value)=> id.toString()===value.productId.toString())
+    public async addProductToCart(cart:ICart, product:Partial<IProduct>,productCount: number) {
+        const productId=product.id;
+        // @ts-ignore
+        const productIndex = cart.cartProducts.findIndex((value)=> productId.toString()===value.productId.toString())
 
         if (productIndex !== -1) {
             cart.cartProducts[productIndex].count += productCount;

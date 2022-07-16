@@ -21,6 +21,16 @@ class CartController {
             next(e);
         }
     }
+    async getCartByUserId(req, res, next) {
+        try {
+            const { userId } = req.params;
+            const getCartByUserId = await service_1.cartService.findCartById(Number(userId));
+            return res.json(getCartByUserId);
+        }
+        catch (e) {
+            next(e);
+        }
+    }
     async deleteCart(req, res, next) {
         try {
             const { id } = req.params;
@@ -40,7 +50,7 @@ class CartController {
             if (!userCart) {
                 userCart = await service_1.cartService.createCart({ userId });
             }
-            const iCart = await service_1.cartService.addProductToCart(userCart, { ...product }, Number(productId), count);
+            const iCart = await service_1.cartService.addProductToCart(userCart, { ...product }, count);
             await service_1.productService.updateProductById({
                 id: Number(productId),
                 stockCount: Number(product?.stockCount) - Number(count)

@@ -1,0 +1,16 @@
+.user_wrap{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+    padding: 10px;
+}
+.carts_container{
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+    padding: 10px;
+}
+.carts_container__div{
+    width: 70%;
+    margin: 0 4%;
+}

@@ -1,0 +1,21 @@
+.header {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+    padding: 15px;
+}
+
+.header a {
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: snow;
+}
+
+.header a[class='active'] {
+    font-weight: bold;
+    text-align: center;
+    color: #AE67FA;
+}

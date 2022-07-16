@@ -23,6 +23,16 @@ class CartController {
         }
     }
 
+    public async getCartByUserId(req: Request, res: Response, next: NextFunction): Promise<Response<ICart> | undefined> {
+        try {
+            const { userId } = req.params;
+            const getCartByUserId = await cartService.findCartById(Number(userId));
+            return res.json(getCartByUserId);
+        } catch (e) {
+            next(e);
+        }
+    }
+
     public async deleteCart(req: Request, res: Response, next: NextFunction) {
         try {
             const {id} = req.params;
@@ -45,7 +55,7 @@ class CartController {
                 userCart = await cartService.createCart({userId});
             }
 
-            const iCart = await cartService.addProductToCart(userCart, {...product}, Number(productId), count);
+            const iCart = await cartService.addProductToCart(userCart, {...product}, count);
 
             await productService.updateProductById({
                 id: Number(productId),

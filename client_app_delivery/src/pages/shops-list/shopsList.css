@@ -1,0 +1,11 @@
+.shops_container{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+.shops_container__div {
+    width:20%;
+}
+.products_container__div {
+    margin: 0 4%;
+}
