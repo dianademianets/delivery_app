@@ -21,6 +21,15 @@ class UserController {
             next(e);
         }
     }
+    public async getCartUserByParams(req: Request, res: Response, next: NextFunction): Promise<Response<IUser> | undefined> {
+        try {
+            const{email}=req.params
+            const getCartUserByParams = await userService.getCartUserByParams(email);
+            return res.json(getCartUserByParams);
+        } catch (e) {
+            next(e);
+        }
+    }
 
     public async deleteUser(req: Request, res: Response, next: NextFunction) {
         try {

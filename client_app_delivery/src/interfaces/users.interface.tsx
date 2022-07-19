@@ -6,5 +6,5 @@ export interface IUser {
     lastName: string;
     phone: string;
     email: string;
-    carts: ICart[];
+    carts?: ICart[];
 }

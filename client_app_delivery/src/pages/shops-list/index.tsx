@@ -1,1 +1,1 @@
-export {default as ShopsList} from './ShopsList'
+export {default as ShopsList} from "./ShopsList"

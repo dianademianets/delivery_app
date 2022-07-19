@@ -9,19 +9,13 @@ export class CreateTableUsers1657536202599 implements MigrationInterface {
                     name: 'firstName',
                     type: 'varchar',
                     width: 250,
-                    isUnique: true,
                     isNullable: false,
                 },
                 {
                     name: 'lastName',
                     type: 'varchar',
                     width: 250,
-                    isUnique: true,
                     isNullable: false,
-                },
-                {
-                    name: 'age',
-                    type: 'int',
                 },
                 {
                     name: 'phone',

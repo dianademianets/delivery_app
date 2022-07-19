@@ -9,6 +9,9 @@ class UserService {
     public async findUsers(): Promise<IUser[]> {
         return userRepository.findUsers();
     }
+    public async getCartUserByParams(email:string): Promise<IUser[]> {
+        return userRepository.getCartUserByParams({email});
+    }
 
     public async deleteUserById(id: number) {
         return userRepository.deleteUserById({id});

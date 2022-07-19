@@ -1,10 +1,12 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useState} from "react";
 
 import {IProduct} from "../../interfaces";
-import './productCartDetails.css'
+import "./productCartDetails.css"
 
 const ProductCartDetails: FC<{ product: IProduct }> = ({product}) => {
+
     const {title, text, price, photos} = product;
+
     let [num, setNum] = useState(1);
     let incNum = () => {
         if (num < 10) {
@@ -20,14 +22,14 @@ const ProductCartDetails: FC<{ product: IProduct }> = ({product}) => {
         setNum(e.target.value);
     }
 
-    localStorage.setItem('cartsProduct', JSON.stringify(num));
+    localStorage.setItem("cartsProduct", JSON.stringify(num));
 
     return (
-        <div className='products_wrap'>
-            <div  className='button__container'>
-                <img className='poster__img' src={`${photos}`}
+        <div className="products_wrap">
+            <div  className="button__container">
+                <img className="poster__img" src={`${photos}`}
                      alt={`${title}`}/>
-                <div className='productsDetails__div'>
+                <div className="productsDetails__div">
                     <h1><b>{title}</b></h1>
                     <p>{text}</p>
                     <p><b>Ціна: </b>{price} грн.</p>

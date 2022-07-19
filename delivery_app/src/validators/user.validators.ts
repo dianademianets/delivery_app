@@ -13,11 +13,12 @@ export const userValidator = {
             .string()
             .alphanum()
             .min(3)
-            .max(20)
+            .max(30)
             .required(),
         phone: Joi
             .string()
-            .regex(regexp.PHONE)
+            .min(10)
+            .max(14)
             .required(),
         email: Joi
             .string()

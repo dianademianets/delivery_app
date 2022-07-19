@@ -1,0 +1,32 @@
+.header__wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    width: 90%;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: snow;
+}
+
+.form__wrap {
+    width: 70%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div__wrap-search_results {
+    width:90%;
+    column-count: 4;
+    column-gap: 4%;
+    margin: 5% 0;
+}
+.user_form{
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+    padding: 10px;
+}

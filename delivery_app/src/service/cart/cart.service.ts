@@ -12,8 +12,7 @@ class CartService {
 
     public async addProductToCart(cart:ICart, product:Partial<IProduct>,productCount: number) {
         const productId=product.id;
-        // @ts-ignore
-        const productIndex = cart.cartProducts.findIndex((value)=> productId.toString()===value.productId.toString())
+        const productIndex = cart.cartProducts.findIndex((value)=> productId===value.productId)
 
         if (productIndex !== -1) {
             cart.cartProducts[productIndex].count += productCount;

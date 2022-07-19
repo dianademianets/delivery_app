@@ -1,2 +1,2 @@
-export * from './regexp'
-export * from './backendUrls'
+export * from "./regexp"
+export * from "./backendUrls"

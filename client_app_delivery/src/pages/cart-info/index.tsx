@@ -1,1 +1,1 @@
-export {default as CartInfo} from './CartInfo'
+export {default as CartInfo} from "./CartInfo"

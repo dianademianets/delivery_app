@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', cartController.getCarts);
 router.get('/cart/:userId', cartController.getCartByUserId);
-router.delete('/:id', cartController.deleteCart);
+router.delete('/delete/:id', cartController.deleteCart);
 router.delete('/', cartController.createCart);
 router.post('/:productId', cartController.addProductToCart);
 

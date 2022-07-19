@@ -1,13 +1,14 @@
-import React, {FC, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, {FC, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import {AxiosResponse} from "axios";
 
-import { ProductDetails } from '../../components';
-import { productService } from '../../services';
+import { ProductDetails } from "../../components";
+import { productService } from "../../services";
 import {IProduct} from "../../interfaces";
-import './productsList.css'
+import "./productsList.css"
 
 const ProductsList:FC = () => {
+
     const {shopId} = useParams();
     const [products, setProduct] = useState([]);
 
@@ -15,7 +16,6 @@ const ProductsList:FC = () => {
         // @ts-ignore
         productService.getByShopId(shopId).then((value:AxiosResponse) => setProduct(value.data))
     }, [shopId])
-
 
     return (
         <div className="products_container__div">

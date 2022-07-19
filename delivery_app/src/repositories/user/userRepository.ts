@@ -17,6 +17,10 @@ class UserRepository extends Repository<User> implements IUserRepository {
             .find({relations: ['carts']})
     }
 
+    public async getCartUserByParams(email: Partial<IUser>): Promise<IUser[]>  {
+        return getManager().getRepository(User)
+            .find(email)
+    }
     public async deleteUserById(findObject: Partial<IUser>) {
         return getManager().getRepository(User)
             .delete(findObject);

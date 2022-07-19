@@ -4,5 +4,5 @@ export const backURL = {
     carts: "/carts/",
     users: "/users/",
     shops: "/shops/",
-    products: `/products/`,
+    products: "/products/"
 };

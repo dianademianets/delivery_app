@@ -1,30 +1,21 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC} from "react";
+import {AxiosResponse} from "axios";
 
 import {cardsService} from "../../services";
-import {AxiosResponse} from "axios";
-import {ICart} from "../../interfaces";
-import {CartDetails} from "../../components";
-
 
 const CartInfo :FC = () => {
-    const [carts, setCart] = useState([]);
-    const productId=localStorage.getItem('productId')
-    const userId=localStorage.getItem('userId')
-    const count=localStorage.getItem('cartsProduct')
-    console.log(productId,userId,count)
-    useEffect(() => {
-        // @ts-ignore
-        cardsService.addProductToCart(userId,productId,count).then((value:AxiosResponse) => setCart(value.data))
-    }, [productId,userId,count])
 
+    const productId=localStorage.getItem("productId")
+    const user= localStorage.getItem("users")
+    const count=localStorage.getItem("cartsProduct")
+    console.log(productId, user,count)
+    cardsService.addProductToCart(Number(user),Number(productId),Number(count)).then((value:AxiosResponse) => console.log(value.data))
 
     return (
-        <div className="products_container__div">
-            {carts && carts.map((cart:ICart)=> <CartDetails key={cart.id} cart={cart}/>)}
-            <button>Submit</button>
+        <div >
+            <button type="submit" className="btn btn-dark">Submit</button>
         </div>
     );
 };
-
 
 export default CartInfo;
